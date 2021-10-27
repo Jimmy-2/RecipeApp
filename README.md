@@ -66,7 +66,7 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://user-images.githubusercontent.com/66243489/138971497-b5874eb5-12de-40e0-a51c-11bde74f915e.png" height=500>
-### [BONUS] Interactive Prototype
+[BONUS] Interactive Prototype
 
 ## Schema 
 [This section will be completed in Unit 9]
