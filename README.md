@@ -135,7 +135,7 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
             });
          }
          ```
-      - (Delete) Delete existed recipe from favorites list
+      - (Delete) Delete existing recipe from favorites list with a button onclick on the right side of each recyclerview item row. 
       
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
