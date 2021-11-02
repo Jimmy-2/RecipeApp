@@ -88,8 +88,7 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
     `GET`    | /recipes/{id}/information | gets information and instructions of the recipe by id
     `GET`    | /recipes/informationBulk?ids={} | gets information and isntructions of recipes by ids
     `GET`    | /recipes/random?number={}&tags={} | gets list of random recipes by number and tag
-    `GET`    | /regions/byId/:id | gets specific region by :id
-    `GET`    | /characters/paths/:name | gets a character's path with a given name
+    
    - Home Screen (random recipe)
       - (Read/GET) Query all posts where user is author
          ```swift
@@ -116,9 +115,9 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
       - (Update/PUT) Update user profile image
       -
    - Favorites Screen (list of favorited recipes)
-      - (Read/GET) Query logged in user object
-      - (Update/PUT) Update user profile image
-      -
+      - (Read/GET)  Recipe ids, names, images and summaries by the stored strings found in the favorites list sqlite database.
+      - Populate recyclerview with each recyclerview item as a singular recipe with their names, images, summaries shown. Pass id as a string to recipe screen using Bundle so that the recipe screen can use the api url GET /recipes/{id}/information to display the recipe information.
+      
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
