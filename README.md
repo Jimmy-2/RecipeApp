@@ -78,7 +78,7 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
    | imageDB       | image   | link of favorited recipe's image stored in database |
    | recipeId | String   | id of recipe that will be used in api's url |
 ### Networking
-   - Home Feed Screen
+   - Home Screen (random recipe)
       - (Read/GET) Query all posts where user is author
          ```swift
          let query = PFQuery(className:"Post")
@@ -97,9 +97,13 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
       - (Delete) Delete existing like
       - (Create/POST) Create a new comment on a post
       - (Delete) Delete existing comment
-   - Create Post Screen
+   - Find Recipe Screen (search by recipe keyword/ingredient)
       - (Create/POST) Create a new post object
-   - Profile Screen
+   - Find Recipe Screen (search by food/recipe category)
+      - (Read/GET) Query logged in user object
+      - (Update/PUT) Update user profile image
+      -
+   - Favorites Screen (list of favorited recipes)
       - (Read/GET) Query logged in user object
       - (Update/PUT) Update user profile image
       -
