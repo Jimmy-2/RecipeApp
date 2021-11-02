@@ -83,11 +83,11 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `GET`    | /cities | gets all cities
-    `GET`    | /cities/byId/:id | gets specific city by :id
-    `GET`    | /continents | gets all continents
-    `GET`    | /continents/byId/:id | gets specific continent by :id
-    `GET`    | /regions | gets all regions
+    `GET`    | /recipes/findByIngredients | gets recipes that contain the ingredients
+    `GET`    | /recipes/complexSearch | gets recipes that contain included parameters (keywords)
+    `GET`    | /recipes/{id}/information | gets information and instructions of the recipe by id
+    `GET`    | /recipes/informationBulk?ids={} | gets information and isntructions of recipes by ids
+    `GET`    | /recipes/random?number={}&tags={} | gets list of random recipes by number and tag
     `GET`    | /regions/byId/:id | gets specific region by :id
     `GET`    | /characters/paths/:name | gets a character's path with a given name
    - Home Screen (random recipe)
