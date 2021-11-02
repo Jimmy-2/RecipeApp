@@ -106,19 +106,17 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
          ```
       - (Create/POST) Create a new like on a post
       - (Delete) Delete existing like
-      - (Create/POST) Create a new comment on a post
-      - (Delete) Delete existing comment
    - Find Recipe Screen (search by recipe keyword/ingredient)
-      - (Create/POST) Create a new post object
+      - (Create/POST) Create a new like on a post
+      - (Delete) Delete existing like
    - Find Recipe Screen (search by food/recipe category)
-      - (Read/GET) Query logged in user object
-      - (Update/PUT) Update user profile image
-      -
+      - (Create/POST) Create a new like on a post
+      - (Delete) Delete existing like
    - Favorites Screen (list of favorited recipes)
       - (Read/GET)  Recipe ids, names, images and summaries by the stored strings found in the favorites list sqlite database.
       - Populate recyclerview with each recyclerview item as a singular recipe with their names, images, summaries shown. Pass id as a string to recipe screen using Bundle so that the recipe screen can use the api url GET /recipes/{id}/information to display the recipe information.
       
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+
 - 
