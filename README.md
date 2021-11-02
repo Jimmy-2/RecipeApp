@@ -114,7 +114,7 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
       - (Delete) Delete existing like
    - Favorites Screen (list of favorited recipes)
       - (Read/GET)  Recipe ids, names, images and summaries by the stored strings found in the favorites list sqlite database.
-      - Populate recyclerview with each recyclerview item as a singular recipe with their names, images, summaries shown. Pass id as a string to recipe screen using Bundle so that the recipe screen can use the api url GET /recipes/{id}/information to display the recipe information.
+      - Populate recyclerview with each recyclerview item as a singular recipe with their names, images, summaries shown. Viewholder onclick will enter recipe screen and pass id as a string to recipe screen using Bundle so that the recipe screen can use the api url GET /recipes/{id}/information to display the recipe information.
       
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
