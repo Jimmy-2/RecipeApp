@@ -69,19 +69,14 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
 [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
-   | objectId      | String   | unique id for the user post (default field) |
-   | author        | Pointer to User| image author |
-   | image         | File     | image that user posts |
-   | caption       | String   | image caption by author |
-   | commentsCount | Number   | number of comments that has been posted to an image |
-   | likesCount    | Number   | number of likes for the post |
-   | createdAt     | DateTime | date when post is created (default field) |
-   | updatedAt     | DateTime | date when post is last updated (default field) |
-[Add table of models]
+   | favoriteIdDB      | String   | generated column id for the favorited recipe in database (favorites tab) |
+   | recipeIdDB        | String | id of a favorited recipe stored in database that will be used to access it's recipe screen.|
+   | titleDB        | String    | title of favorited recipe stored in database |
+   | imageDB       | image   | link of favorited recipe's image stored in database |
+   | recipeId | String   | id of recipe that will be used in api's url |
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
