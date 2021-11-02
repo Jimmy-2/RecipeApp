@@ -78,6 +78,18 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
    | imageDB       | image   | link of favorited recipe's image stored in database |
    | recipeId | String   | id of recipe that will be used in api's url |
 ### Networking
+##### Spooncular API
+- Base URL - [https://api.spoonacular.com](https://api.spoonacular.com)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /cities | gets all cities
+    `GET`    | /cities/byId/:id | gets specific city by :id
+    `GET`    | /continents | gets all continents
+    `GET`    | /continents/byId/:id | gets specific continent by :id
+    `GET`    | /regions | gets all regions
+    `GET`    | /regions/byId/:id | gets specific region by :id
+    `GET`    | /characters/paths/:name | gets a character's path with a given name
    - Home Screen (random recipe)
       - (Read/GET) Query all posts where user is author
          ```swift
@@ -110,3 +122,4 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+- 
