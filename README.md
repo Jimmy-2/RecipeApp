@@ -116,16 +116,23 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
       - (Read/GET)  Recipe ids, names, images and summaries by the stored strings found in the favorites list sqlite database.
       - Populate recyclerview with each recyclerview item as a singular recipe with their names, images, summaries shown. OnBindViewHolder Onclick will enter recipe screen and pass id as a string to recipe screen using Bundle so that the recipe screen can use the api url GET /recipes/{id}/information to display the recipe information.
          ```swift
-         let query = PFQuery(className:"Post")
-         query.whereKey("author", equalTo: currentUser)
-         query.order(byDescending: "createdAt")
-         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-            if let error = error { 
-               print(error.localizedDescription)
-            } else if let posts = posts {
-               print("Successfully retrieved \(posts.count) posts.")
-           // TODO: Do something with posts...
-            }
+         @Override
+         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+         ......
+            holder.favoritesLayout.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                   RecipeFragment fragment = new RecipeFragment();
+                   //using bundle to pass data to another fragment
+                   Bundle args = new Bundle();
+                   //key, value
+                   args.putString("RecipeId", String.valueOf(recipeIdDB.get(position)));
+                   fragment.setArguments(args);
+                   //add a stack so we can click back button to go back to favorites fragment (add function in mainactivity to pop stack)
+                   activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, fragment).addToBackStack(null).commit();
+               }
+            });
          }
          ```
       
