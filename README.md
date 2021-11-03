@@ -107,8 +107,21 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
       - (Create/POST) Create a new like on a post
       - (Delete) Delete existing like
    - Find Recipe Screen (search by recipe keyword/ingredient)
-      - (Create/POST) Create a new like on a post
-      - (Delete) Delete existing like
+      - (Read/GET) Find recipes that use as many of the given ingredients as possible and have as little as possible missing ingredients. 
+        ```java
+         AsyncHttpClient client = new DefaultAsyncHttpClient();
+        client.prepare("GET", "https://spoonacular-recipe-food-nutrition-           v1.p.rapidapi.com/recipes/findByIngredients?ingredients=apples%2Cflour%2Csugar&number=5&ignorePantry=true&ranking=1")
+         .setHeader("x-rapidapi-host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
+         .setHeader("x-rapidapi-key", "SIGN-UP-FOR-KEY")
+         .execute()
+         .toCompletableFuture()
+          .thenAccept(System.out::println)
+          .join();
+
+         client.close();
+         ```
+
+    
    - Find Recipe Screen (search by food/recipe category)
       - (Create/POST) Create a new like on a post
       - (Delete) Delete existing like
