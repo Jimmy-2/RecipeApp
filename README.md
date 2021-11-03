@@ -90,22 +90,21 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
     `GET`    | /recipes/random?number={}&tags={} | gets list of random recipes by number and tag
     
    - Home Screen (random recipe)
-      - (Read/GET) Query all posts where user is author
+      - (Read/GET) Get a list of random recipes
          ```swift
-         let query = PFQuery(className:"Post")
-         query.whereKey("author", equalTo: currentUser)
-         query.order(byDescending: "createdAt")
-         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-            if let error = error { 
-               print(error.localizedDescription)
-            } else if let posts = posts {
-               print("Successfully retrieved \(posts.count) posts.")
-           // TODO: Do something with posts...
-            }
-         }
+         AsyncHttpClient client = new DefaultAsyncHttpClient();
+		client.prepare("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=vegetarian%2Cdessert&number=1")
+			.setHeader("x-rapidapi-host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
+			.setHeader("x-rapidapi-key", "SIGN-UP-FOR-KEY")
+			.execute()
+			.toCompletableFuture()
+			.thenAccept(System.out::println)
+			.join();
+
+		client.close();
          ```
-      - (Create/POST) Create a new like on a post
-      - (Delete) Delete existing like
+      - (Create/POST) Save to Favorites list
+      - (Delete) Remove from Favorites list
    - Find Recipe Screen (search by recipe keyword/ingredient)
       - (Read/GET) Find recipes that use as many of the given ingredients as possible and have as little as possible missing ingredients. 
         ```java
