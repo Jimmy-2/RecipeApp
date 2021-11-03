@@ -125,6 +125,7 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
    - Find Recipe Screen (search by food/recipe category)
       - (Create/POST) Create a new like on a post
       - (Delete) Delete existing like
+   - Recipe Screen (Displays information about the recipe such as name, description, ingredients, instructions, etc)
    - Favorites Screen (list of favorited recipes)
       - (Read/GET)  Recipe ids, names, images and summaries by the stored strings found in the favorites list sqlite database.
       - Populate recyclerview with each recyclerview item as a singular recipe with their names, images, summaries shown. OnBindViewHolder Onclick will enter recipe screen and pass id as a string to recipe screen using Bundle so that the recipe screen can use the api url GET /recipes/{id}/information to display the recipe information.
