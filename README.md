@@ -136,8 +136,6 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
 
          client.close();
          ```
-
-      - (Delete) Delete existing like
    - Recipe Screen (Displays information about the recipe such as name, description, ingredients, instructions, etc)
       - Get a recipe's id (String) from the other screens through bundle
       - (Read/GET)  Get recipe information such as name, description, ingredients, instructions, images, etc from the endpoint, /recipes/{id}/information and replacing the {id} with the passed String id. Use codepath's Async Http Client library to access and parse the json.
