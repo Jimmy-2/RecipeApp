@@ -139,6 +139,34 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
 
       - (Delete) Delete existing like
    - Recipe Screen (Displays information about the recipe such as name, description, ingredients, instructions, etc)
+      - Get a recipe's id (String) from the other screens through bundle
+      - (Read/GET)  Get recipe information such as name, description, ingredients, instructions, images, etc from the endpoint, /recipes/{id}/information and replacing the {id} with the passed String id. Use codepath's Async Http Client library to access and parse the json.
+         ```swift
+           String recipeId = getArguments().getString("Bundle Key");
+           String recipe_API = "https://api.spoonacular.com/recipes/recipeId/information?apiKey=YOUR-API-KEY&includeNutrition=true";
+
+           AsyncHttpClient client = new AsyncHttpClient();
+           client.get(recipe_API, new JsonHttpResponseHandler() {
+               @Override
+               public void onSuccess(int statusCode, Headers headers, JSON json) {
+                   Log.d(TAG, "onSuccess");
+                   JSONObject jsonObject = json.jsonObject;
+                   String testing = "";
+                   try {
+                       /*
+                        Parse information from the json and put them into textviews.
+                       /*
+                   } catch (JSONException e) {
+                       Log.e(TAG, "Hit json exception", e);
+                       e.printStackTrace();
+                   }
+               }
+               @Override
+               public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
+                   Log.d(TAG, "onFailure");
+               }
+           });
+         ```
    - Favorites Screen (list of favorited recipes)
       - (Read/GET)  Recipe ids, names, images and summaries by the stored strings found in the favorites list sqlite database.
       - Populate recyclerview with each recyclerview item as a singular recipe with their names, images, summaries shown. OnBindViewHolder Onclick will enter recipe screen and pass id as a string to recipe screen using Bundle so that the recipe screen can use the api url GET /recipes/{id}/information to display the recipe information.
