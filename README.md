@@ -79,7 +79,7 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
    | recipeId | String   | id of recipe that will be used in api's url |
 ### Networking
 ##### Spooncular API
-- Base URL - [https://api.spoonacular.com](https://api.spoonacular.com)
+- Base URL - [https://api.spoonacular.com](https://spoonacular.com/food-api/docs)
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
