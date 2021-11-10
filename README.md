@@ -193,9 +193,14 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
 - [Create basic snippets for each Parse network request]
 
 Gifs:
+1st tab:
 
+2nd tab:
 
+3rd tab:
 
-Favorites Screen: 
+4th tab: Favorites Screen: 
 
 <img src='https://github.com/Jimmy-2/RecipeApp/blob/master/JimmyRecipe1.gif?raw=true' title='Favorites Screen 11/9/2021 Unit 10' width='' alt='Favorites Screen 11/9/2021 Unit 10' />
+
+Recipe Screen:
