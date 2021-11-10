@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <GridLayout
+        android:id="@+id/category_grid"
+        android:layout_width="369dp"
+        android:layout_height="620dp"
+        android:layout_margin="20sp"
+        android:columnCount="2"
+        android:rowCount="5">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:text="Chicken"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:text="Beef"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:text="Fish"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:text="Lamb"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:text="Pork"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:text="Vegetables"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:text="Other"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:text="Foods"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:text="Test"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:text="Hello"
+            android:textSize="20dp" />
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/categoryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9557F8"
+        android:text="Food Categories"
+        android:textAlignment="center"
+        android:textSize="25sp" />
+
+</FrameLayout>
