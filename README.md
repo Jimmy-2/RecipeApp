@@ -3,7 +3,7 @@ Android project for Codepath
 
 Group members: (Add your name guys. Delete this once everyone has added their names) 
 
-[](https://github.com/LimberLumberSlumber) - 1st Tab: Random Recipe Screen
+[Jonathan Lin](https://github.com/LimberLumberSlumber) - 1st Tab: Random Recipe Screen
 
 [](https://github.com/Avoracity) - 2nd Tab: Search Recipe by Keyword/Ingredient Screen 
 
