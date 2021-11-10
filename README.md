@@ -197,4 +197,5 @@ Gifs:
 
 
 Favorites Screen: 
+
 <img src='https://github.com/Jimmy-2/RecipeApp/blob/master/JimmyRecipe1.gif?raw=true' title='Favorites Screen 11/9/2021 Unit 10' width='' alt='Favorites Screen 11/9/2021 Unit 10' />
