@@ -6,6 +6,7 @@ Android project for Codepath
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
+3. [Gifs](#Gifs)
 
 ## Overview
 ### Description
@@ -192,7 +193,8 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 
-Gifs:
+## Gifs:
+
 1st tab:
 
 2nd tab:
