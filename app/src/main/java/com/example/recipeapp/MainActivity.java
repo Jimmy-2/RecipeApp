@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.recipeapp.favorites.FavoritesFragment;
 import com.example.recipeapp.fragments.TestFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_change4:
                     default:
                         Toast.makeText(MainActivity.this, "test4", Toast.LENGTH_SHORT).show();
-                        fragment = new TestFragment();
+                        fragment = new FavoritesFragment();
 
                         break;
                 }
@@ -59,5 +60,12 @@ public class MainActivity extends AppCompatActivity {
         });
         // Set default selection
         bottomNavigationView.setSelectedItemId(R.id.action_change1);
+    }
+
+    // pop/remove stack once we have successfully gone back to previous fragment. This is only used if you decide to use addToBackStack when transversing fragments
+    public void onBackPressed()
+    {
+        FragmentManager fm = MainActivity.this.getSupportFragmentManager();
+        fm.popBackStack();
     }
 }
