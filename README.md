@@ -1,11 +1,9 @@
 # RecipeApp
 Android project for Codepath
 
-Group members: (Add your name guys. Delete this once everyone has added their names) 
-
 [Jonathan Lin](https://github.com/LimberLumberSlumber) - 1st Tab: Random Recipe Screen
 
-[](https://github.com/Avoracity) - 2nd Tab: Search Recipe by Keyword/Ingredient Screen 
+[Michael Alvarez](https://github.com/Avoracity) - 2nd Tab: Search Recipe by Keyword/Ingredient Screen 
 
 [Alexandra Ernest](https://github.com/AlexandraErnest) - 3rd Tab: Find Recipe by Category Screen
 
