@@ -40,7 +40,10 @@ A recipe app for searching, viewing, and saving recipes.
 
 * - [ ] User can login to save recipe(if we do not implement a login system, we will use sqlite database to save the recipes)
 * - [ ] A fragment screen that displays the recipe and its instructions. User can add the recipe to a favorites database table. This screen will be called the recipeFragment.
-* - [x] The 1st tab will be a fragment screen that displays a random recipe and its instructions. This will follow the same layout as recipeFragment and will be called randomRecipeFragment.
+* - [ ] The 1st tab will be a fragment screen that displays a random recipe and its instructions. This will follow the same layout as recipeFragment and will be called randomRecipeFragment.
+	* -[x] Get basic layout of home fragment screen set up.
+	* -[ ] Set up the basic code for the home fragment screen.
+	* -[ ] Connect the home fragment screen with the recipe card.
 * - [ ] The 2nd tab will be a fragment screen that allows user to search recipes either by recipe keyword or by ingredients. The screen will display a recyclerview/list of recipes that fit the searched parameters. Clicking on any of these recyclerview/list items will lead to a recipeFragment for that item. Will be called searchRecipeFragment
 * - [ ] The 3rd tab will be a screen called searchCategoryFragment that allows the user to find recipes based on food categories. Clicking on any of the categories will lead to another screen called listCategoryFragment that will display a list of recipes based on the category. Will mostly follow the same layout as the searchRecipeFragment but without the search bar. 
 * - [x] The 4th tab will be a screen called favoritesFragment. It will display a recyclerview populated with data from the favorites database. Users can also delete any of these items. 
