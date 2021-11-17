@@ -5,15 +5,22 @@
 package com.example.recipeapp.favorites;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.text.InputType;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recipeapp.R;
@@ -46,14 +53,18 @@ public class FavoritesEditAdapter extends RecyclerView.Adapter<FavoritesEditAdap
     @Override
     public void onBindViewHolder(@NonNull FavoritesEditAdapter.MyViewHolder holder, int position) {
 
-        holder.tvRecipeTitle.setText(String.valueOf(title.get(position)));
+        holder.tvRecipeTitleEdit.setText(String.valueOf(title.get(position)));
+        holder.tvRecipeSummaryEdit.setText(String.valueOf(summary.get(position)));
 
+        holder.etRecipeNotesEdit.setText(String.valueOf(notes.get(position)));
+        holder.etRecipeNotesEdit.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        holder.etRecipeNotesEdit.setRawInputType(InputType.TYPE_CLASS_TEXT);
 
 
         holder.favoritesEditLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //edit notes here or do nothing and instead use another onclick for the edit notes button in MyViewHolder class
+                //go to the recipe screen
             }
         });
 
@@ -67,19 +78,81 @@ public class FavoritesEditAdapter extends RecyclerView.Adapter<FavoritesEditAdap
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvRecipeTitle;
+        TextView tvRecipeTitleEdit, tvRecipeSummaryEdit;
+        EditText etRecipeNotesEdit;
         LinearLayout favoritesEditLayout;
+        Button btnClearNotes;
+
 
         ImageView ivRecipeImage, ivDeleteRecipe;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvRecipeTitle = itemView.findViewById(R.id.tvRecipeTitle);
+            tvRecipeTitleEdit = itemView.findViewById(R.id.tvRecipeTitleEdit);
+            tvRecipeSummaryEdit = itemView.findViewById(R.id.tvRecipeSummaryEdit );
+            etRecipeNotesEdit = itemView.findViewById(R.id.etRecipeNotesEdit);
 
             favoritesEditLayout = itemView.findViewById(R.id.favoritesEditLayout);
 
             ivDeleteRecipe = itemView.findViewById(R.id.ivDeleteRecipe);
+
+            btnClearNotes = itemView.findViewById(R.id.btnClearNotes);
+            btnClearNotes.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+
+                        FavoritesDatabaseHelper favoritesDB = new FavoritesDatabaseHelper(ivDeleteRecipe.getContext());
+                        favoritesDB.updateNotes(String.valueOf(row_id.get(position)), "");
+
+                    }
+
+                    //refresh recyclerview after deleting recipe from database here:
+                    AppCompatActivity activity = (AppCompatActivity) itemView.getContext();
+                    FavoritesEditFragment fragment = new FavoritesEditFragment();
+
+                    FragmentManager fm = activity.getSupportFragmentManager();
+                    fm.popBackStack();
+
+                    //refresh the fragment when you delete a recyclerview/database item
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, fragment).addToBackStack(null).commit();
+                }
+            });
+
+            etRecipeNotesEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                @Override
+                public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                    if (actionId == EditorInfo.IME_ACTION_DONE) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            String newNotes = etRecipeNotesEdit.getText().toString();
+
+                            //testing position
+                            //Toast.makeText(context, "delete"+position,  Toast.LENGTH_SHORT).show();
+
+
+                            FavoritesDatabaseHelper favoritesDB = new FavoritesDatabaseHelper(ivDeleteRecipe.getContext());
+                            favoritesDB.updateNotes(String.valueOf(row_id.get(position)), newNotes);
+
+                        }
+
+                        //refresh recyclerview after deleting recipe from database here:
+                        AppCompatActivity activity = (AppCompatActivity) itemView.getContext();
+                        FavoritesEditFragment fragment = new FavoritesEditFragment();
+
+                        FragmentManager fm = activity.getSupportFragmentManager();
+                        fm.popBackStack();
+
+                        //refresh the fragment when you delete a recyclerview/database item
+                        activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, fragment).addToBackStack(null).commit();
+                    }
+                    return false;
+                }
+            });
+
 
             //click on the ivDeleteRecipe imageview to delete current recipe from database.
             ivDeleteRecipe.setOnClickListener(new View.OnClickListener() {
@@ -98,14 +171,20 @@ public class FavoritesEditAdapter extends RecyclerView.Adapter<FavoritesEditAdap
 
                     }
 
+
+
                     //refresh recyclerview after deleting recipe from database here:
                     AppCompatActivity activity = (AppCompatActivity) view.getContext();
+
+                    FragmentManager fm = activity.getSupportFragmentManager();
+                    fm.popBackStack();
+
                     FavoritesEditFragment fragment = new FavoritesEditFragment();
 
 
 
                     //refresh the fragment when you delete a recyclerview/database item
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, fragment).commit();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, fragment).addToBackStack(null).commit();
 
 
 

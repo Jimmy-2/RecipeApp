@@ -20,21 +20,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <EditText
+                android:id="@+id/etRecipeNotesEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivRecipeImageEdit"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/ivRecipeImageEdit"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:hint="Add Recipe Notes"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
+                android:textSize="12sp" />
+
             <TextView
-                android:id="@+id/tvRecipeTitle"
+                android:id="@+id/tvRecipeTitleEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
-                android:layout_toEndOf="@+id/ivRecipeImage"
+                android:layout_toEndOf="@+id/ivRecipeImageEdit"
                 android:gravity="center"
                 android:text="Fish Pie With Fresh and Smoked Salmon"
                 android:textSize="15sp" />
 
             <ImageView
-                android:id="@+id/ivRecipeImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/ivRecipeImageEdit"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="0dp"
@@ -43,24 +59,40 @@
 
             <ImageView
                 android:id="@+id/ivDeleteRecipe"
-                android:layout_width="61dp"
-                android:layout_height="37dp"
-                android:layout_below="@+id/tvRecipeTitle"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_toEndOf="@+id/btnEditNotes"
+                android:layout_width="88dp"
+                android:layout_height="26dp"
+                android:layout_below="@+id/btnClearNotes"
+                android:layout_marginTop="0dp"
                 app:srcCompat="@drawable/ic_delete" />
 
             <Button
-                android:id="@+id/btnEditNotes"
+                android:id="@+id/btnClearNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_below="@+id/textView4"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="2dp"
+                android:text="Clear Notes"
+                android:textSize="7sp" />
+
+            <TextView
+                android:id="@+id/tvRecipeSummaryEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRecipeTitleEdit"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/ivRecipeImageEdit"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvRecipeTitle"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_toEndOf="@+id/ivRecipeImage"
-                android:text="Edit Notes" />
-
+                android:layout_below="@+id/ivRecipeImageEdit"
+                android:layout_marginTop="0dp"
+                android:text="Recipe Notes:" />
 
 
         </RelativeLayout>

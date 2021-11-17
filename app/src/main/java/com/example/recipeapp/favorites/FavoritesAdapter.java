@@ -5,7 +5,6 @@
 package com.example.recipeapp.favorites;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recipeapp.R;
@@ -80,9 +78,9 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            ivRecipeImage = itemView.findViewById(R.id.ivRecipeImage);
+            ivRecipeImage = itemView.findViewById(R.id.ivRecipeImageEdit);
 
-            tvRecipeTitle = itemView.findViewById(R.id.tvRecipeTitle);
+            tvRecipeTitle = itemView.findViewById(R.id.tvRecipeTitleEdit);
             tvRecipeSummary= itemView.findViewById(R.id.tvRecipeSummary);
             tvRecipeNotes = itemView.findViewById(R.id.tvRecipeNotes);
 

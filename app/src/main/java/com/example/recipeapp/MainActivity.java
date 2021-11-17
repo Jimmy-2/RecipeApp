@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.recipeapp.favorites.FavoritesFragment;
+import com.example.recipeapp.fragments.RecipeCategoryFragment;
 import com.example.recipeapp.fragments.TestFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_change3:
                         Toast.makeText(MainActivity.this, "test3", Toast.LENGTH_SHORT).show();
 
-                        fragment = new TestFragment();
+                        fragment = new RecipeCategoryFragment();
 
                         break;
                     case R.id.action_change4:

@@ -1,11 +1,9 @@
 # RecipeApp
 Android project for Codepath
 
-Group members: (Add your name guys. Delete this once everyone has added their names) 
+[Jonathan Lin](https://github.com/LimberLumberSlumber) - 1st Tab: Random Recipe Screen
 
-[](https://github.com/LimberLumberSlumber) - 1st Tab: Random Recipe Screen
-
-[](https://github.com/Avoracity) - 2nd Tab: Search Recipe by Keyword/Ingredient Screen 
+[Michael Alvarez](https://github.com/Avoracity) - 2nd Tab: Search Recipe by Keyword/Ingredient Screen 
 
 [Alexandra Ernest](https://github.com/AlexandraErnest) - 3rd Tab: Find Recipe by Category Screen
 
@@ -221,3 +219,10 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
 <img src='https://github.com/Jimmy-2/RecipeApp/blob/master/JimmyRecipe1.gif?raw=true' title='Favorites Screen 11/9/2021 Unit 10' width='' alt='Favorites Screen 11/9/2021 Unit 10' />
 
 Recipe Screen:
+
+##### Unit 10: 11/9/2021
+
+4th tab: Favorites Screen:
+
+<img src='https://raw.githubusercontent.com/Jimmy-2/RecipeApp/master/favorites2.gif' title='Favorites Screen 11/16/2021 Unit 11' width='' alt='Favorites Screen 11/16/2021 Unit 11' />
+

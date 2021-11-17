@@ -3,9 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ianzu/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/ianzu/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/favorites_edit_row.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/ianzu/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/favorites_row.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/ianzu/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_favorites.xml" value="0.33" />
+        <entry key="..\:/Users/ianzu/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_favorites_edit.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ianzu/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_recipe_full.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ianzu/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_recipecategory.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kingl/AndroidStudioProjects/RecipeApp/app/src/main/res/drawable/ic_delete.xml" value="0.3828125" />
         <entry key="..\:/Users/kingl/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/kingl/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/favorites_edit_row.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/kingl/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/favorites_edit_row.xml" value="0.67" />
         <entry key="..\:/Users/kingl/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/favorites_row.xml" value="0.5" />
         <entry key="..\:/Users/kingl/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_favorites.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kingl/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_favorites_edit.xml" value="0.36666666666666664" />
