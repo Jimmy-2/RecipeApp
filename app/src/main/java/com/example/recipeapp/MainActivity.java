@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.recipeapp.favorites.FavoritesFragment;
+import com.example.recipeapp.fragments.RecipeCategoryFragment;
 import com.example.recipeapp.fragments.TestFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
