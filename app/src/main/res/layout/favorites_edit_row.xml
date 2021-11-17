@@ -24,7 +24,7 @@
                 android:id="@+id/etRecipeNotesEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvRecipeSummaryEdit"
+                android:layout_below="@+id/ivRecipeImageEdit"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_toEndOf="@+id/ivRecipeImageEdit"
@@ -59,23 +59,22 @@
 
             <ImageView
                 android:id="@+id/ivDeleteRecipe"
-                android:layout_width="61dp"
-                android:layout_height="37dp"
-                android:layout_below="@+id/etRecipeNotesEdit"
-                android:layout_marginStart="89dp"
-                android:layout_marginTop="33dp"
-                android:layout_toEndOf="@+id/btnClearNotes"
+                android:layout_width="88dp"
+                android:layout_height="26dp"
+                android:layout_below="@+id/btnClearNotes"
+                android:layout_marginTop="0dp"
                 app:srcCompat="@drawable/ic_delete" />
 
             <Button
                 android:id="@+id/btnClearNotes"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/etRecipeNotesEdit"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="30dp"
-                android:layout_toEndOf="@+id/ivRecipeImageEdit"
-                android:text="Clear Notes" />
+                android:layout_height="36dp"
+                android:layout_below="@+id/textView4"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="2dp"
+                android:text="Clear Notes"
+                android:textSize="7sp" />
 
             <TextView
                 android:id="@+id/tvRecipeSummaryEdit"
@@ -86,6 +85,14 @@
                 android:layout_marginTop="0dp"
                 android:layout_toEndOf="@+id/ivRecipeImageEdit"
                 android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivRecipeImageEdit"
+                android:layout_marginTop="0dp"
+                android:text="Recipe Notes:" />
 
 
         </RelativeLayout>
