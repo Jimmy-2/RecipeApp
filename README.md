@@ -222,6 +222,7 @@ Recipe Screen:
 
 ##### Unit 10: 11/9/2021
 
-4th tab: Favorites Screen: 
+4th tab: Favorites Screen:
+
 <img src='https://raw.githubusercontent.com/Jimmy-2/RecipeApp/master/favorites2.gif' title='Favorites Screen 11/16/2021 Unit 11' width='' alt='Favorites Screen 11/16/2021 Unit 11' />
 
