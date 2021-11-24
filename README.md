@@ -48,6 +48,7 @@ A recipe app for searching, viewing, and saving recipes.
 * - [ ] The 3rd tab will be a screen called searchCategoryFragment that allows the user to find recipes based on food categories. Clicking on any of the categories will lead to another screen called listCategoryFragment that will display a list of recipes based on the category. Will mostly follow the same layout as the searchRecipeFragment but without the search bar. 
 * - [x] The 4th tab will be a screen called favoritesFragment. It will display a recyclerview populated with data from the favorites database. Users can also delete any of these items. 
 * - [ ] Clicking on any of the recipes in favorites screen will lead to the recipeFragment for that recipe. 
+* - [x] User sort their favorites list. Sort settings will be saved so when the user exits the app, the list will still be sorted the same way.
 * - [x] User can also add notes to recipes in their favorites list and edit/delete these notes,
 
 ### 2. Screen Archetypes
