@@ -42,7 +42,8 @@ A recipe app for searching, viewing, and saving recipes.
 * - [ ] A fragment screen that displays the recipe and its instructions. User can add the recipe to a favorites database table. This screen will be called the recipeFragment.
 * - [ ] The 1st tab will be a fragment screen that displays a random recipe and its instructions. This will follow the same layout as recipeFragment and will be called randomRecipeFragment.
 	* -[x] Get basic layout of home fragment screen set up.
-	* -[ ] Set up the basic code for the home fragment screen.
+	* -[x] Set up the basic code for the home fragment screen.
+	* -[ ] Set up RecyclerView for displaying recipe cards.
 	* -[ ] Connect the home fragment screen with the recipe card.
 * - [ ] The 2nd tab will be a fragment screen that allows user to search recipes either by recipe keyword or by ingredients. The screen will display a recyclerview/list of recipes that fit the searched parameters. Clicking on any of these recyclerview/list items will lead to a recipeFragment for that item. Will be called searchRecipeFragment
 * - [ ] The 3rd tab will be a screen called searchCategoryFragment that allows the user to find recipes based on food categories. Clicking on any of the categories will lead to another screen called listCategoryFragment that will display a list of recipes based on the category. Will mostly follow the same layout as the searchRecipeFragment but without the search bar. 
@@ -222,13 +223,18 @@ https://www.figma.com/file/OBT1KtDpdZsgEIyyqdFPRy/RecipeApp?node-id=0%3A1
 
 4th tab: Favorites Screen: 
 
-<img src='https://github.com/Jimmy-2/RecipeApp/blob/master/JimmyRecipe1.gif?raw=true' title='Favorites Screen 11/9/2021 Unit 10' width='' alt='Favorites Screen 11/9/2021 Unit 10' />
+<img src='https://github.com/Jimmy-2/RecipeApp/blob/master/gifs/JimmyFavorites1.gif' title='Favorites Screen 11/9/2021 Unit 10' width='' alt='Favorites Screen 11/9/2021 Unit 10' />
 
 Recipe Screen:
 
-##### Unit 10: 11/9/2021
+##### Unit 11: 11/16/2021
 
 4th tab: Favorites Screen:
 
-<img src='https://raw.githubusercontent.com/Jimmy-2/RecipeApp/master/favorites2.gif' title='Favorites Screen 11/16/2021 Unit 11' width='' alt='Favorites Screen 11/16/2021 Unit 11' />
+<img src='https://raw.githubusercontent.com/Jimmy-2/RecipeApp/master/gifs/favorites2.gif' title='Favorites Screen 11/16/2021 Unit 11' width='' alt='Favorites Screen 11/16/2021 Unit 11' />
 
+##### Unit 12: 11/23/2021
+
+4th tab: Favorites Screen:
+
+<img src='https://raw.githubusercontent.com/Jimmy-2/RecipeApp/master/gifs/favorites3.gif' title='Favorites Screen 11/23/2021 Unit 12' width='' alt='Favorites Screen 11/23/2021 Unit 11' />
