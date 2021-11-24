@@ -14,7 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 import com.example.recipeapp.R;
 
@@ -27,6 +30,13 @@ public class FavoritesFragment extends Fragment {
     FavoritesAdapter favoritesAdapter;
 
     RecyclerView rvFavorites;
+    private Spinner sortSpinner;
+
+    private String sortingCol;
+    private String sortingOrder;
+
+    SortFavoritesDatabaseHelper sortDB;
+    ArrayList<String> sortSettings;
 
     Button btnGoToEdit, btnTest;
 
@@ -43,7 +53,77 @@ public class FavoritesFragment extends Fragment {
 
         //other code here, adding later
 
+        setSortSettings();
+
+        sortSettings = new ArrayList<>();
+        storeSortDataInArrays();
+
+        sortSpinner = (Spinner) view.findViewById(R.id.sortSpinner);
+
+        String[] sortItems = new String[] {};
+        if(sortSettings.get(1).equals(String.valueOf(1))) {
+            sortingCol = "_id";
+            sortingOrder = "Asc";
+            sortItems = new String[] { "Date Added\u2191", "Date Added \u2193", "Recipe Name \u2191", "Recipe Name \u2193"};
+        }else if(sortSettings.get(2).equals(String.valueOf(1))) {
+            sortingCol = "_id";
+            sortingOrder = "Desc";
+            sortItems = new String[] { "Date Added \u2193", "Date Added \u2191", "Recipe Name \u2191", "Recipe Name \u2193"};
+        }else if(sortSettings.get(3).equals(String.valueOf(1))) {
+            sortingCol = "title";
+            sortingOrder = "Asc";
+            sortItems = new String[] { "Recipe Name \u2191", "Recipe Name \u2193", "Date Added \u2191", "Date Added \u2193"};
+        }else if(sortSettings.get(4).equals(String.valueOf(1))) {
+            sortingCol = "title";
+            sortingOrder = "Desc";
+            sortItems = new String[] { "Recipe Name \u2193", "Recipe Name \u2191", "Date Added \u2191", "Date Added \u2193"};
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_spinner_item, sortItems);
+        sortSpinner.setAdapter(adapter);
+        sortSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        checkSelection();
+                        break;
+                    case 2:
+                        checkSelection();
+                        break;
+                    case 3:
+                        checkSelection();
+                        break;
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+
         return view;
+    }
+
+    void checkSelection() {
+        if(sortSpinner.getSelectedItem().toString().equals("Date Added \u2191")) {
+            sortDB.updateSortSetting("1","0","0","0");
+        }else if(sortSpinner.getSelectedItem().toString().equals("Date Added \u2193")) {
+            sortDB.updateSortSetting("0","1","0","0");
+        }
+        else if(sortSpinner.getSelectedItem().toString().equals("Recipe Name \u2191")) {
+            sortDB.updateSortSetting("0","0","1","0");
+        }
+        else if(sortSpinner.getSelectedItem().toString().equals("Recipe Name \u2193")) {
+            sortDB.updateSortSetting("0","0","0","1");
+        }
+
+        getFragmentManager().beginTransaction().replace(R.id.flContainer, new FavoritesFragment()).commit();
+
     }
 
     @Override
@@ -92,15 +172,40 @@ public class FavoritesFragment extends Fragment {
         rvFavorites.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
+    //check if app is opened for the first time and if it is, set the sorting setting
+    void setSortSettings() {
+        sortDB = new SortFavoritesDatabaseHelper(getActivity());
+        if (sortDB.getSortCount() < 1) {
+            sortDB.addSort(1, 0, 0, 0);
+        }
+
+    }
+
     void goToFavoritesEditFragment() {
         FavoritesEditFragment newFragment = new FavoritesEditFragment ();
         //add a stack so we can click back button to go back
         getFragmentManager().beginTransaction().replace(R.id.flContainer, newFragment).addToBackStack(null).commit();
     }
 
+    void storeSortDataInArrays() {
+        Cursor cursor = sortDB.readSortSetting();
+        if(cursor.getCount() == 0) {
+            //Toast.makeText(getContext(), "No data", Toast.LENGTH_SHORT).show();
+        }else {
+            while(cursor.moveToNext()) {
+                sortSettings.add(cursor.getString(0));
+                sortSettings.add(cursor.getString(1));
+                sortSettings.add(cursor.getString(2));
+                sortSettings.add(cursor.getString(3));
+                sortSettings.add(cursor.getString(4));
+
+            }
+        }
+    }
+
 
     void storeFavoritesDataInArrays() {
-        Cursor cursor = favoritesDB.readAllDataSorted("nothing", "nothing");
+        Cursor cursor = favoritesDB.readAllDataSorted(sortingCol, sortingOrder);
         if(cursor.getCount() == 0) {
             //Toast.makeText(getContext(), "No data", Toast.LENGTH_SHORT).show();
         }else {
