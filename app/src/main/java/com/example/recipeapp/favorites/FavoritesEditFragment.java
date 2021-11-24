@@ -33,6 +33,11 @@ public class FavoritesEditFragment extends Fragment {
 
     Button btnDone;
 
+    private String sortingColEdit;
+    private String sortingOrderEdit;
+
+    SortFavoritesDatabaseHelper sortDBEdit;
+    private ArrayList<String> sortSettingsEdit;
 
     public FavoritesEditFragment() {
         // Required empty public constructor
@@ -42,6 +47,30 @@ public class FavoritesEditFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        sortDBEdit = new SortFavoritesDatabaseHelper(getActivity());
+        System.out.println("HELLO");
+        sortSettingsEdit = new ArrayList<>();
+        storeSortDataInArraysEdit();
+
+        if(sortSettingsEdit.get(1).equals(String.valueOf(1))) {
+            sortingColEdit = "_id";
+            sortingOrderEdit = "Asc";
+
+        }else if(sortSettingsEdit.get(2).equals(String.valueOf(1))) {
+            sortingColEdit = "_id";
+            sortingOrderEdit = "Desc";
+
+        }else if(sortSettingsEdit.get(3).equals(String.valueOf(1))) {
+            sortingColEdit = "title";
+            sortingOrderEdit = "Asc";
+
+        }else if(sortSettingsEdit.get(4).equals(String.valueOf(1))) {
+            sortingColEdit = "title";
+            sortingOrderEdit = "Desc";
+
+        }
+
+
         return inflater.inflate(R.layout.fragment_favorites_edit, container, false);
     }
 
@@ -80,8 +109,28 @@ public class FavoritesEditFragment extends Fragment {
         rvFavoritesEdit.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
+    void storeSortDataInArraysEdit() {
+        System.out.println("HELLO3");
+        Cursor cursor = sortDBEdit.readSortSetting();
+        System.out.println("HELLO4");
+        if(cursor.getCount() == 0) {
+
+            //Toast.makeText(getContext(), "No data", Toast.LENGTH_SHORT).show();
+        }else {
+            while(cursor.moveToNext()) {
+                sortSettingsEdit.add(cursor.getString(0));
+                sortSettingsEdit.add(cursor.getString(1));
+                sortSettingsEdit.add(cursor.getString(2));
+                sortSettingsEdit.add(cursor.getString(3));
+                sortSettingsEdit.add(cursor.getString(4));
+
+            }
+        }
+
+    }
+
     void storeFavoritesDataInArrays() {
-        Cursor cursor = favoritesDB.readAllDataSorted("nothing", "nothing");
+        Cursor cursor = favoritesDB.readAllDataSorted(sortingColEdit, sortingOrderEdit);
         if(cursor.getCount() == 0) {
             //Toast.makeText(getContext(), "No data", Toast.LENGTH_SHORT).show();
         }else {

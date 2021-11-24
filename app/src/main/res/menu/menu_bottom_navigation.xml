@@ -19,7 +19,7 @@
         app:showAsAction="always" />
     <item
         android:id="@+id/action_change4"
-        android:icon="@mipmap/ic_launcher"
-        android:title="4"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:title="Favorites"
         app:showAsAction="always" />
 </menu>
