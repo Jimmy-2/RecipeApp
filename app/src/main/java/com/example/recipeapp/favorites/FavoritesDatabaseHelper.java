@@ -73,8 +73,8 @@ public class FavoritesDatabaseHelper extends SQLiteOpenHelper {
     //implementing sorting databasehelper towards the end
     // For now i will make it sorted by most recent added
     public Cursor readAllDataSorted(String col, String order){
-        //String query = "SELECT * FROM " + TABLE_NAME+ " Order By "+ col + " "+ order;
-        String query = "SELECT * FROM " + TABLE_NAME;
+        String query = "SELECT * FROM " + TABLE_NAME+ " Order By "+ col + " "+ order;
+
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;
