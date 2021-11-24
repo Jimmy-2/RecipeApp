@@ -183,7 +183,9 @@ public class FavoritesFragment extends Fragment {
 
     void goToFavoritesEditFragment() {
         FavoritesEditFragment newFragment = new FavoritesEditFragment ();
+
         //add a stack so we can click back button to go back
+        System.out.println("HELLO");
         getFragmentManager().beginTransaction().replace(R.id.flContainer, newFragment).addToBackStack(null).commit();
     }
 

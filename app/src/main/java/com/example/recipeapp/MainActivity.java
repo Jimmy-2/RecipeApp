@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.action_change4:
                     default:
-                        Toast.makeText(MainActivity.this, "test4", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Favorites", Toast.LENGTH_SHORT).show();
                         fragment = new FavoritesFragment();
 
                         break;
