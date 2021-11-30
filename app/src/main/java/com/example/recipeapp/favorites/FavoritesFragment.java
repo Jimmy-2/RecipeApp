@@ -64,19 +64,19 @@ public class FavoritesFragment extends Fragment {
         if(sortSettings.get(1).equals(String.valueOf(1))) {
             sortingCol = "_id";
             sortingOrder = "Asc";
-            sortItems = new String[] { "Date Added\u2191", "Date Added \u2193", "Recipe Name \u2191", "Recipe Name \u2193"};
+            sortItems = new String[] { "Date\u2191", "Date\u2193", "Name\u2191", "Name\u2193"};
         }else if(sortSettings.get(2).equals(String.valueOf(1))) {
             sortingCol = "_id";
             sortingOrder = "Desc";
-            sortItems = new String[] { "Date Added \u2193", "Date Added \u2191", "Recipe Name \u2191", "Recipe Name \u2193"};
+            sortItems = new String[] { "Date\u2193", "Date\u2191", "Name\u2191", "Name\u2193"};
         }else if(sortSettings.get(3).equals(String.valueOf(1))) {
             sortingCol = "title";
             sortingOrder = "Asc";
-            sortItems = new String[] { "Recipe Name \u2191", "Recipe Name \u2193", "Date Added \u2191", "Date Added \u2193"};
+            sortItems = new String[] { "Name\u2191", "Name\u2193", "Date\u2191", "Date\u2193"};
         }else if(sortSettings.get(4).equals(String.valueOf(1))) {
             sortingCol = "title";
             sortingOrder = "Desc";
-            sortItems = new String[] { "Recipe Name \u2193", "Recipe Name \u2191", "Date Added \u2191", "Date Added \u2193"};
+            sortItems = new String[] { "Name\u2193", "Name\u2191", "Date\u2191", "Date\u2193"};
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
@@ -110,15 +110,15 @@ public class FavoritesFragment extends Fragment {
     }
 
     void checkSelection() {
-        if(sortSpinner.getSelectedItem().toString().equals("Date Added \u2191")) {
+        if(sortSpinner.getSelectedItem().toString().equals("Date\u2191")) {
             sortDB.updateSortSetting("1","0","0","0");
-        }else if(sortSpinner.getSelectedItem().toString().equals("Date Added \u2193")) {
+        }else if(sortSpinner.getSelectedItem().toString().equals("Date\u2193")) {
             sortDB.updateSortSetting("0","1","0","0");
         }
-        else if(sortSpinner.getSelectedItem().toString().equals("Recipe Name \u2191")) {
+        else if(sortSpinner.getSelectedItem().toString().equals("Name u2191")) {
             sortDB.updateSortSetting("0","0","1","0");
         }
-        else if(sortSpinner.getSelectedItem().toString().equals("Recipe Name \u2193")) {
+        else if(sortSpinner.getSelectedItem().toString().equals("Name\u2193")) {
             sortDB.updateSortSetting("0","0","0","1");
         }
 

@@ -24,9 +24,9 @@
                 android:id="@+id/etRecipeNotesEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ivRecipeImageEdit"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
+                android:layout_below="@+id/tvRecipeSummaryEdit"
+                android:layout_marginStart="-6dp"
+                android:layout_marginTop="62dp"
                 android:layout_toEndOf="@+id/ivRecipeImageEdit"
                 android:background="#FFFFFF"
                 android:ems="10"
@@ -69,10 +69,10 @@
                 android:id="@+id/btnClearNotes"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
-                android:layout_below="@+id/textView4"
+                android:layout_below="@+id/ivRecipeImageEdit"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="0dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="60dp"
                 android:text="Clear Notes"
                 android:textSize="7sp" />
 
@@ -85,14 +85,6 @@
                 android:layout_marginTop="0dp"
                 android:layout_toEndOf="@+id/ivRecipeImageEdit"
                 android:text="TextView" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ivRecipeImageEdit"
-                android:layout_marginTop="0dp"
-                android:text="Recipe Notes:" />
 
 
         </RelativeLayout>
