@@ -1,7 +1,7 @@
 /**
  * Created by Jonathan.
  * */
-
+/*
 package com.example.recipeapp.home;
 
 import android.os.Bundle;
@@ -44,4 +44,4 @@ public class RandomRecipeFragment extends Fragment {
     }
 
 
-}
+}*/

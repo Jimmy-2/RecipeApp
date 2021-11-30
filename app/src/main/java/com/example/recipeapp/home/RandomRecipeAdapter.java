@@ -1,7 +1,7 @@
 /**
  * Created by Jonathan.
  * */
-
+/*
 package com.example.recipeapp.home;
 
 import android.content.Context;
@@ -83,3 +83,4 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeAdapte
 }
 
 }
+*/
