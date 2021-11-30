@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.recipeapp.R;
 import com.example.recipeapp.fragments.RecipeScreenFragment;
 
@@ -53,6 +54,9 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
         holder.tvRecipeSummary.setText(String.valueOf(summary.get(position)));
         holder.tvRecipeNotes.setText(String.valueOf(notes.get(position)));
 
+        Glide.with(context).load(image_URL.get(position)).into(holder.ivRecipeImage);
+
+
 
 
         holder.favoritesLayout.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +77,8 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, fragment).addToBackStack(null).commit();
             }
         });
+
+
 
 
     }
@@ -107,4 +113,6 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
 
         }
     }
+
+
 }
