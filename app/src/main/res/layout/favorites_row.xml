@@ -23,55 +23,70 @@
             <TextView
                 android:id="@+id/tvRecipeTitleEdit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="0dp"
-                android:layout_toEndOf="@+id/ivRecipeImageEdit"
+                android:background="#D2D5A9"
                 android:gravity="center"
                 android:text="Fish Pie With Fresh and Smoked Salmon"
                 android:textSize="15sp" />
 
             <ImageView
                 android:id="@+id/ivRecipeImageEdit"
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:layout_below="@+id/tvRecipeTitleEdit"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
                 android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="10dp"
+                android:background="#F4CBCF"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/tvRecipeSummary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvRecipeTitleEdit"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_toEndOf="@+id/ivRecipeImageEdit"
+                android:layout_below="@+id/textView6"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:gravity="center"
                 android:maxLines="5"
                 android:text="Summary:"
-                android:textSize="10sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tvRecipeNotes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ivRecipeImageEdit"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_toEndOf="@+id/textView2"
+                android:layout_below="@+id/textView7"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
                 android:text="Notes: This recipe requires blah blah blah..."
-                android:textSize="10sp" />
+                android:textSize="15sp" />
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ivRecipeImageEdit"
-                android:layout_marginTop="0dp"
-                android:text="Recipe Notes:"
-                android:textSize="10sp" />
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="10dp"
+                android:background="#BBDCDC"
+                android:gravity="center"
+                android:text="TextView"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRecipeSummary"
+                android:layout_marginTop="5dp"
+                android:background="#BBDCDC"
+                android:gravity="center"
+                android:text="Notes:"
+                android:textSize="12dp" />
 
 
         </RelativeLayout>

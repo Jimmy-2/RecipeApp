@@ -7,7 +7,9 @@ package com.example.recipeapp.favorites;
 import android.database.Cursor;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.example.recipeapp.R;
@@ -38,7 +41,9 @@ public class FavoritesFragment extends Fragment {
     SortFavoritesDatabaseHelper sortDB;
     ArrayList<String> sortSettings;
 
-    Button btnGoToEdit, btnTest;
+    Button btnGoToEdit;
+
+    ImageView invisibleTextButton;
 
     public FavoritesFragment() {
         // Required empty public constructor
@@ -115,7 +120,7 @@ public class FavoritesFragment extends Fragment {
         }else if(sortSpinner.getSelectedItem().toString().equals("Date\u2193")) {
             sortDB.updateSortSetting("0","1","0","0");
         }
-        else if(sortSpinner.getSelectedItem().toString().equals("Name u2191")) {
+        else if(sortSpinner.getSelectedItem().toString().equals("Name\u2191")) {
             sortDB.updateSortSetting("0","0","1","0");
         }
         else if(sortSpinner.getSelectedItem().toString().equals("Name\u2193")) {
@@ -132,28 +137,25 @@ public class FavoritesFragment extends Fragment {
 
         rvFavorites= view.findViewById(R.id.rvFavorites);
 
+        invisibleTextButton = view.findViewById(R.id.invisibleTextButton);
+        invisibleTextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                favoritesDB = new FavoritesDatabaseHelper(getActivity());
+                favoritesDB.addRecipe("644681", "https://spoonacular.com/recipeImages/644681-556x370.jpg", "Bacon Pie", "Summary: Bacon pie is the blah blah", "Notes: This is very good");
+
+                getFragmentManager().beginTransaction().replace(R.id.flContainer, new FavoritesFragment()).commit();
+
+
+
+            }
+        });
+
         btnGoToEdit = view.findViewById(R.id.btnGoToEdit);
         btnGoToEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goToFavoritesEditFragment();
-            }
-        });
-
-        btnTest = view.findViewById(R.id.btnTest);
-        btnTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //add fake favorites recipe data here
-
-                favoritesDB = new FavoritesDatabaseHelper(getActivity());
-                favoritesDB.addRecipe("644681", "www.image.jpg something", "Bacon Pie", "Summary: Bacon pie is the blah blah", "Notes: This is very good");
-                favoritesDB.addRecipe("644681", "www.image.jpg something", "Steak Pie", "Summary: steak pie is the blah blah", "Notes: This is very ok");
-                favoritesDB.addRecipe("716429", "www.image.jpg something", "Cheese Pie", "Summary: something new", "Notes: This is very bad");
-                favoritesDB.addRecipe("716429", "www.image.jpg something", "Potato Pie", "Summary: another summary", "Notes: I cant make this");
-
-                getFragmentManager().beginTransaction().replace(R.id.flContainer, new FavoritesFragment()).commit();
-
             }
         });
 

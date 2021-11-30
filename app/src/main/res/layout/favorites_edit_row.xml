@@ -24,67 +24,98 @@
                 android:id="@+id/etRecipeNotesEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvRecipeSummaryEdit"
-                android:layout_marginStart="-6dp"
-                android:layout_marginTop="62dp"
-                android:layout_toEndOf="@+id/ivRecipeImageEdit"
+                android:layout_below="@+id/textView5"
+                android:layout_marginTop="6dp"
                 android:background="#FFFFFF"
                 android:ems="10"
                 android:gravity="center|center_horizontal|center_vertical"
                 android:hint="Add Recipe Notes"
                 android:imeOptions="actionDone"
                 android:inputType="textMultiLine"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tvRecipeTitleEdit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_toEndOf="@+id/ivRecipeImageEdit"
+                android:layout_height="40dp"
+                android:background="#D2D5A9"
                 android:gravity="center"
                 android:text="Fish Pie With Fresh and Smoked Salmon"
                 android:textSize="15sp" />
 
             <ImageView
                 android:id="@+id/ivRecipeImageEdit"
-                android:layout_width="100dp"
+                android:layout_width="250dp"
                 android:layout_height="100dp"
+                android:layout_below="@+id/tvRecipeTitleEdit"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#F4CBCF"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
                 android:id="@+id/ivDeleteRecipe"
                 android:layout_width="88dp"
-                android:layout_height="26dp"
+                android:layout_height="40dp"
                 android:layout_below="@+id/btnClearNotes"
-                android:layout_marginTop="0dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@+id/ivRecipeImageEdit"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
                 app:srcCompat="@drawable/ic_delete" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnClearNotes"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:layout_below="@+id/ivRecipeImageEdit"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="60dp"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvRecipeTitleEdit"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@+id/ivRecipeImageEdit"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
                 android:text="Clear Notes"
-                android:textSize="7sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tvRecipeSummaryEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvRecipeTitleEdit"
+                android:layout_below="@+id/textView4"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="TextView"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivRecipeImageEdit"
+                android:layout_marginTop="10dp"
+                android:background="#BBDCDC"
+                android:gravity="center"
+                android:text="Summary:"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRecipeSummaryEdit"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_toEndOf="@+id/ivRecipeImageEdit"
-                android:text="TextView" />
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:background="#BBDCDC"
+                android:gravity="center"
+                android:text="Notes:"
+                android:textSize="12dp" />
 
 
         </RelativeLayout>

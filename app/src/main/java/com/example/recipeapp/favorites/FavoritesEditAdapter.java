@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.recipeapp.R;
 
 import java.util.ArrayList;
@@ -60,6 +61,8 @@ public class FavoritesEditAdapter extends RecyclerView.Adapter<FavoritesEditAdap
         holder.etRecipeNotesEdit.setImeOptions(EditorInfo.IME_ACTION_DONE);
         holder.etRecipeNotesEdit.setRawInputType(InputType.TYPE_CLASS_TEXT);
 
+        Glide.with(context).load(image_URL.get(position)).into(holder.ivRecipeImage);
+
 
         holder.favoritesEditLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +99,7 @@ public class FavoritesEditAdapter extends RecyclerView.Adapter<FavoritesEditAdap
             favoritesEditLayout = itemView.findViewById(R.id.favoritesEditLayout);
 
             ivDeleteRecipe = itemView.findViewById(R.id.ivDeleteRecipe);
+            ivRecipeImage = itemView.findViewById(R.id.ivRecipeImageEdit);
 
             btnClearNotes = itemView.findViewById(R.id.btnClearNotes);
             btnClearNotes.setOnClickListener(new View.OnClickListener() {
