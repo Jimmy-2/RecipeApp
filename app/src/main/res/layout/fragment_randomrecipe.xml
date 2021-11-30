@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relLay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.RandomRecipeFragment">
+
+
+    <TextView
+        android:id="@+id/tvHomeBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:background="#64E341"
+        android:gravity="center"
+        android:text="Home"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/ivRandomImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCheckoutRandom"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/tvRandomTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCheckoutRandom"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="17dp"
+        android:layout_toEndOf="@+id/ivRandomImage"
+        android:text="Title of recipe here"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tvRandomSummary"
+        android:layout_width="354dp"
+        android:layout_height="338dp"
+        android:layout_below="@+id/ivRandomImage"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="15dp"
+        android:text="Summary of the recipe here: Along with ingredients and cooking tools needed."
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tvCheckoutRandom"
+        android:layout_width="322dp"
+        android:layout_height="43dp"
+        android:layout_below="@+id/tvWelcome"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="37dp"
+        android:text="Check out a random recipe below:"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvHomeBanner"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="23dp"
+        android:text="Welcome!"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/tvRandomTime"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRandomAuthor"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="109dp"
+        android:text="Total time for recipe"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/tvRandomAuthor"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRandomTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:text="Author"
+        android:textSize="15dp" />
+
+</RelativeLayout>
