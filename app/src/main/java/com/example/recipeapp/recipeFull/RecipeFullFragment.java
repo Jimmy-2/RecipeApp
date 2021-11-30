@@ -26,6 +26,8 @@ import com.bumptech.glide.Glide;
 public class RecipeFullFragment extends Fragment {
 
     TextView tvTitle;
+    TextView tvReadyMin;
+    TextView tvServings;
     ImageView ivFood;
     String recipeID;
     public static final String TAG = "MainActivity";
@@ -57,6 +59,8 @@ public class RecipeFullFragment extends Fragment {
         getRecipeData(recipeID);
         tvTitle = view.findViewById(R.id.tvTitle);
         ivFood = view.findViewById(R.id.ivFood);
+        tvReadyMin = view.findViewById(R.id.tvReadyMin);
+        tvServings = view.findViewById(R.id.tvServings);
     }
 
     void getRecipeData(String recipeID) {
@@ -76,6 +80,8 @@ public class RecipeFullFragment extends Fragment {
                     String sourceURL = results.getString("spoonacularSourceUrl");
 
                     tvTitle.setText(id);
+                    tvReadyMin.setText("Ready in " + readyTime + "minutes.");
+                    tvServings.setText("Makes " + servings + " servings");
                     Glide.with(getContext()).load(imageURL).into(ivFood);
 
                 }
