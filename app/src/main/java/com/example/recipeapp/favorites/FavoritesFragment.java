@@ -147,10 +147,10 @@ public class FavoritesFragment extends Fragment {
                 //add fake favorites recipe data here
 
                 favoritesDB = new FavoritesDatabaseHelper(getActivity());
-                favoritesDB.addRecipe(132321, "www.image.jpg something", "Bacon Pie", "Summary: Bacon pie is the blah blah", "Notes: This is very good");
-                favoritesDB.addRecipe(132321, "www.image.jpg something", "Steak Pie", "Summary: steak pie is the blah blah", "Notes: This is very ok");
-                favoritesDB.addRecipe(132321, "www.image.jpg something", "Cheese Pie", "Summary: something new", "Notes: This is very bad");
-                favoritesDB.addRecipe(132321, "www.image.jpg something", "Potato Pie", "Summary: another summary", "Notes: I cant make this");
+                favoritesDB.addRecipe("644681", "www.image.jpg something", "Bacon Pie", "Summary: Bacon pie is the blah blah", "Notes: This is very good");
+                favoritesDB.addRecipe("644681", "www.image.jpg something", "Steak Pie", "Summary: steak pie is the blah blah", "Notes: This is very ok");
+                favoritesDB.addRecipe("716429", "www.image.jpg something", "Cheese Pie", "Summary: something new", "Notes: This is very bad");
+                favoritesDB.addRecipe("716429", "www.image.jpg something", "Potato Pie", "Summary: another summary", "Notes: I cant make this");
 
                 getFragmentManager().beginTransaction().replace(R.id.flContainer, new FavoritesFragment()).commit();
 

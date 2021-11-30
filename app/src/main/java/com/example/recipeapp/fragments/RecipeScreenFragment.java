@@ -64,7 +64,7 @@ public class RecipeScreenFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+        System.out.println("HELLO"+recipe_id);
         getRecipeData(recipe_id);
 
 
@@ -72,7 +72,8 @@ public class RecipeScreenFragment extends Fragment {
 
 
     void getRecipeData(String recipe_id) {
-        String TEST_API = "https://api.spoonacular.com/recipes/" + recipe_id + "/information?apiKey=f280b73ab3c948cfa40536f5e35735da &includeNutrition=false";
+        String TEST_API = "https://api.spoonacular.com/recipes/"+recipe_id+"/information?apiKey=f280b73ab3c948cfa40536f5e35735da&includeNutrition=false";
+        System.out.println("HELLO"+TEST_API);
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(TEST_API, new JsonHttpResponseHandler() {
             @Override
@@ -86,8 +87,17 @@ public class RecipeScreenFragment extends Fragment {
                     String servings = results.getString("servings");
                     String readyTime = results.getString("readyInMinutes");
                     String sourceURL = results.getString("spoonacularSourceUrl");
-                    String changePercent = results.getString("percent_change");
-                    changePercent = changePercent.concat("%");
+                    String summary = results.getString("summary");
+                    String instructions = results.getString("instructions");
+
+                    System.out.println("HELLO"+id);
+                    System.out.println("HELLO"+recipeTitle);
+                    System.out.println("HELLO"+imageURL);
+                    System.out.println("HELLO"+servings);
+                    System.out.println("HELLO"+readyTime);
+                    System.out.println("HELLO"+sourceURL);
+                    System.out.println("HELLO"+summary);
+                    System.out.println("HELLO"+instructions);
 
 
 

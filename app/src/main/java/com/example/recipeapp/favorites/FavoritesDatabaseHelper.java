@@ -37,7 +37,7 @@ public class FavoritesDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME +
                 " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_RECIPE_ID + " INTEGER, " +
+                COLUMN_RECIPE_ID + " TEXT, " +
                 COLUMN_IMAGE_URL + " TEXT, " +
                 COLUMN_TITLE + " TEXT, " +
                 COLUMN_SUMMARY + " TEXT, " +
@@ -51,7 +51,7 @@ public class FavoritesDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addRecipe(int recipe_id, String image_URL, String title, String summary, String notes) {
+    public void addRecipe(String recipe_id, String image_URL, String title, String summary, String notes) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
