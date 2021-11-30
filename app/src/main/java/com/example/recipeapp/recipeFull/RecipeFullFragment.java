@@ -74,16 +74,16 @@ public class RecipeFullFragment extends Fragment {
                 try {
                     JSONObject results = jsonObject;
                     String id = results.getString("id");
+                    String recipeTitle = results.getString("title");
                     String imageURL = results.getString("image");
                     String servings = results.getString("servings");
                     String readyTime = results.getString("readyInMinutes");
                     String sourceURL = results.getString("spoonacularSourceUrl");
 
-                    tvTitle.setText(id);
+                    tvTitle.setText(recipeTitle);
                     tvReadyMin.setText("Ready in " + readyTime + "minutes.");
                     tvServings.setText("Makes " + servings + " servings");
                     Glide.with(getContext()).load(imageURL).into(ivFood);
-
                 }
                 catch (JSONException e) {
                     e.printStackTrace();
