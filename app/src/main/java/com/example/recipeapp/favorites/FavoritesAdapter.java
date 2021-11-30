@@ -5,6 +5,7 @@
 package com.example.recipeapp.favorites;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recipeapp.R;
+import com.example.recipeapp.fragments.RecipeScreenFragment;
 
 import java.util.ArrayList;
 
@@ -56,6 +59,18 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
             @Override
             public void onClick(View view) {
                 // pass recipe_id through bundle then transverse to Isaac's recipe screen
+
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                RecipeScreenFragment fragment = new RecipeScreenFragment();
+                //using bundle to pass data to another fragment
+                Bundle args = new Bundle();
+                //key, value
+
+                //pass the recipe's id to isaac's recipe screen so he can parse the api link with for the specific recipe
+                args.putString("recipe_id", String.valueOf(recipe_id.get(position)));
+                fragment.setArguments(args);
+                //add a stack so we can click back button to go back to favorites screen
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, fragment).addToBackStack(null).commit();
             }
         });
 
