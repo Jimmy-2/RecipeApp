@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ImageView;
 
@@ -28,8 +29,20 @@ public class RecipeFullFragment extends Fragment {
     TextView tvTitle;
     TextView tvReadyMin;
     TextView tvServings;
+    TextView tvInstructions;
+    TextView tvSummary;
     ImageView ivFood;
     String recipeID;
+    String id;
+    String recipeTitle;
+    String imageURL;
+    String servings;
+    String readyTime;
+    String sourceURL;
+    String summary;
+    String instructions;
+    //private favoritesDatabaseHelper favoritesDB;
+    Button btnAddFav;
     public static final String TAG = "MainActivity";
 
     //geView
@@ -61,6 +74,8 @@ public class RecipeFullFragment extends Fragment {
         ivFood = view.findViewById(R.id.ivFood);
         tvReadyMin = view.findViewById(R.id.tvReadyMin);
         tvServings = view.findViewById(R.id.tvServings);
+        tvSummary = view.findViewById(R.id.tvSummary);
+        tvInstructions = view.findViewById(R.id.tvInstructions);
     }
 
     void getRecipeData(String recipeID) {
@@ -73,16 +88,20 @@ public class RecipeFullFragment extends Fragment {
                 JSONObject jsonObject = json.jsonObject;
                 try {
                     JSONObject results = jsonObject;
-                    String id = results.getString("id");
-                    String recipeTitle = results.getString("title");
-                    String imageURL = results.getString("image");
-                    String servings = results.getString("servings");
-                    String readyTime = results.getString("readyInMinutes");
-                    String sourceURL = results.getString("spoonacularSourceUrl");
+                    id = results.getString("id");
+                    recipeTitle = results.getString("title");
+                    imageURL = results.getString("image");
+                    servings = results.getString("servings");
+                    readyTime = results.getString("readyInMinutes");
+                    sourceURL = results.getString("spoonacularSourceUrl");
+                    summary = results.getString("summary");
+                    instructions = results.getString("instructions");
 
                     tvTitle.setText(recipeTitle);
                     tvReadyMin.setText("Ready in " + readyTime + "minutes.");
                     tvServings.setText("Makes " + servings + " servings");
+                    tvInstructions.setText(instructions);
+                    tvSummary.setText(summary);
                     Glide.with(getContext()).load(imageURL).into(ivFood);
                 }
                 catch (JSONException e) {
