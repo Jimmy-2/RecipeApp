@@ -39,28 +39,6 @@
         app:srcCompat="@color/teal_200"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvIngredients"
-        android:layout_width="150dp"
-        android:layout_height="598dp"
-        android:layout_below="@+id/ivFood"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="261dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvInstructions"
-        android:layout_width="247dp"
-        android:layout_height="597dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="133dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="1dp" />
-
     <TextView
         android:id="@+id/tvReadyMin"
         android:layout_width="wrap_content"
@@ -80,5 +58,26 @@
         android:layout_marginStart="134dp"
         android:layout_marginTop="78dp"
         tools:text="6 servings " />
+
+    <TextView
+        android:id="@+id/tvSummary"
+        android:layout_width="392dp"
+        android:layout_height="261dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="116dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvInstructions"
+        android:layout_width="397dp"
+        android:layout_height="332dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="10dp"
+        android:text="TextView" />
 
 </RelativeLayout>
