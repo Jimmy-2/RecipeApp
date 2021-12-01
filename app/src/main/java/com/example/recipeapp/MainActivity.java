@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.example.recipeapp.favorites.FavoritesFragment;
 import com.example.recipeapp.fragments.RecipeCategoryFragment;
 import com.example.recipeapp.fragments.TestFragment;
+import com.example.recipeapp.home.RandomRecipeFragment;
+import com.example.recipeapp.recipeFull.RecipeFullFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment;
                 switch (menuItem.getItemId()) {
                     case R.id.action_change1:
-                        Toast.makeText(MainActivity.this, "test1", Toast.LENGTH_SHORT).show();
-                        fragment = new TestFragment();
+                        Toast.makeText(MainActivity.this, "Homescreen - Random Recipe", Toast.LENGTH_SHORT).show();
+                        fragment = new RandomRecipeFragment();
                         break;
                     case R.id.action_change2:
                         Toast.makeText(MainActivity.this, "test2", Toast.LENGTH_SHORT).show();
