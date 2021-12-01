@@ -88,7 +88,6 @@ public class RecipeScreenFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         System.out.println("HELLO"+recipe_id);
         tvTitle = view.findViewById(R.id.tvTitle);
-        getRecipeData(recipe_id);
 
         ivFood = view.findViewById(R.id.ivFood);
         tvReadyMin = view.findViewById(R.id.tvReadyMin);
@@ -96,7 +95,7 @@ public class RecipeScreenFragment extends Fragment {
         tvSummary = view.findViewById(R.id.tvSummary);
         tvInstructions = view.findViewById(R.id.tvInstructions);
 
-
+        getRecipeData("661494");
 
 
         btnAddFav = view.findViewById(R.id.btnAddFav);
@@ -129,12 +128,12 @@ public class RecipeScreenFragment extends Fragment {
                     servings = results.getString("servings");
                     readyTime = results.getString("readyInMinutes");
                     sourceURL = results.getString("spoonacularSourceUrl");
-                    summary = results.getString("summary");
-                    instructions = results.getString("instructions");
+                    summary = removeTag(results.getString("summary"));
+                    instructions = removeTag(results.getString("instructions"));
 
                     tvTitle.setText(recipeTitle);
 
-                    tvReadyMin.setText("Ready in " + readyTime + "minutes.");
+                    tvReadyMin.setText("Ready in " + readyTime + " minutes.");
                     tvServings.setText("Makes " + servings + " servings");
                     tvInstructions.setText(instructions);
                     tvSummary.setText(summary);
@@ -165,6 +164,25 @@ public class RecipeScreenFragment extends Fragment {
         });
     }
 
-
+    String removeTag(String tagged){
+        String untagged;
+        String tag = "</b>";
+        untagged = tagged.replaceAll(tag," ");
+        String tag1 = "<b>";
+        untagged=untagged.replaceAll(tag1," ");
+        String tag2 = "<a>";
+        untagged=untagged.replaceAll(tag2," ");
+        String tag4 = "</a>";
+        untagged=untagged.replaceAll(tag4," ");
+        String tag3 = "<li>";
+        untagged=untagged.replaceAll(tag3," ");
+        String tag5 = "</li>";
+        untagged=untagged.replaceAll(tag5," ");
+        String tag6 = "<ol>";
+        untagged=untagged.replaceAll(tag6," ");
+        String tag7 = "</ol>";
+        untagged=untagged.replaceAll(tag7," ");
+        return untagged;
+    }
 
 }
