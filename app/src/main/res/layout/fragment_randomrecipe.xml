@@ -19,14 +19,26 @@
         android:text="Home"
         android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/tvCheckoutRandom"
+        android:layout_width="322dp"
+        android:layout_height="43dp"
+        android:layout_below="@+id/tvWelcome"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="18dp"
+        android:text="Check out a random recipe below:"
+        android:textSize="20dp" />
+
     <ImageView
         android:id="@+id/ivRandomImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvCheckoutRandom"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="17dp"
         android:src="@drawable/ic_launcher_background" />
 
     <TextView
@@ -36,33 +48,47 @@
         android:layout_below="@+id/tvCheckoutRandom"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="17dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="28dp"
         android:layout_toEndOf="@+id/ivRandomImage"
-        android:text="Title of recipe here"
+        android:text="Ramen Noodle Coleslaw"
         android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tvRandomAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@+id/tvRandomTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        android:layout_toEndOf="@+id/ivRandomImage"
+        android:text="Author: Dizzy Busy and Hungry"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/tvRandomTime"
+        android:layout_width="239dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvRandomAuthor"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        android:layout_toEndOf="@+id/ivRandomImage"
+        android:text="Total time for recipe: 15 minutes"
+        android:textSize="14dp" />
 
     <TextView
         android:id="@+id/tvRandomSummary"
-        android:layout_width="354dp"
-        android:layout_height="338dp"
-        android:layout_below="@+id/ivRandomImage"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRandomTime"
         android:layout_alignParentStart="true"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="15dp"
-        android:text="Summary of the recipe here: Along with ingredients and cooking tools needed."
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/tvCheckoutRandom"
-        android:layout_width="322dp"
-        android:layout_height="43dp"
-        android:layout_below="@+id/tvWelcome"
-        android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="37dp"
-        android:text="Check out a random recipe below:"
+        android:layout_marginTop="10dp"
+        android:text="Instructions: Toast the sesame seeds, about 350 degrees in the oven for about 10-15 minutes. Keep an eye on them to make sure they don't burn.Mix together the following to make the dressing: olive oil, vinegar, sugar, salt, pepper, green onions, chicken flavor packet from the ramen noodle package.Crush the ramen noodles until there are no large chunks (small chunks are OK).Combine the shredded cabbage and ramen noodles in a large bowl.Pour the dressing on the cabbage/noodle mixture and toss..."
         android:textSize="20dp" />
 
     <TextView
@@ -76,26 +102,5 @@
         android:layout_marginTop="23dp"
         android:text="Welcome!"
         android:textSize="40dp" />
-
-    <TextView
-        android:id="@+id/tvRandomTime"
-        android:layout_width="136dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvRandomAuthor"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="109dp"
-        android:text="Total time for recipe"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/tvRandomAuthor"
-        android:layout_width="77dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvRandomTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp"
-        android:text="Author"
-        android:textSize="15dp" />
 
 </RelativeLayout>
