@@ -95,8 +95,8 @@ public class RecipeScreenFragment extends Fragment {
         tvSummary = view.findViewById(R.id.tvSummary);
         tvInstructions = view.findViewById(R.id.tvInstructions);
 
-        getRecipeData("661494");
-
+        //getRecipeData("661494");
+        getRecipeData(recipe_id);
 
         btnAddFav = view.findViewById(R.id.btnAddFav);
         btnAddFav.setOnClickListener(new View.OnClickListener() {
@@ -133,8 +133,8 @@ public class RecipeScreenFragment extends Fragment {
 
                     tvTitle.setText(recipeTitle);
 
-                    tvReadyMin.setText("Ready in " + readyTime + " minutes.");
-                    tvServings.setText("Makes " + servings + " servings");
+                    tvReadyMin.setText("Ready in " + readyTime + " minute(s).");
+                    tvServings.setText("Makes " + servings + " serving(s)");
                     tvInstructions.setText(instructions);
                     tvSummary.setText(summary);
                     Glide.with(getContext()).load(imageURL).into(ivFood);
