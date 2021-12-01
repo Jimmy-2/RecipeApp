@@ -39,7 +39,7 @@ public class RecipeScreenFragment extends Fragment {
 
 
     private FavoritesDatabaseHelper favoritesDB;
-    Button btnAddToFavorites;
+    Button btnAddFav;
 
     String id;
     String recipeTitle;
@@ -49,6 +49,8 @@ public class RecipeScreenFragment extends Fragment {
     String sourceURL;
     String summary;
     String instructions;
+
+    TextView tvTitle;
 
     public RecipeScreenFragment() {
 
@@ -65,7 +67,7 @@ public class RecipeScreenFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_recipe_screen, container, false);
+        View view = inflater.inflate(R.layout.fragment_recipe_full, container, false);
 
         recipe_id = getArguments().getString("recipe_id");
 
@@ -77,16 +79,21 @@ public class RecipeScreenFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         System.out.println("HELLO"+recipe_id);
+        tvTitle = view.findViewById(R.id.tvTitle);
         getRecipeData(recipe_id);
 
-        btnAddToFavorites = view.findViewById(R.id.btnAddToFavorites);
-        btnAddToFavorites.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+
+        btnAddFav = view.findViewById(R.id.btnAddFav);
+        btnAddFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 favoritesDB = new FavoritesDatabaseHelper(getActivity());
-                favoritesDB.addRecipe(id, imageURL, "Bacon Pie", summary, "");
+                favoritesDB.addRecipe(id, imageURL, recipeTitle, summary, "");
 
             }
         });
@@ -113,6 +120,9 @@ public class RecipeScreenFragment extends Fragment {
                     sourceURL = results.getString("spoonacularSourceUrl");
                     summary = results.getString("summary");
                     instructions = results.getString("instructions");
+
+                    tvTitle.setText(recipeTitle);
+
 
                     System.out.println("HELLO"+id);
                     System.out.println("HELLO"+recipeTitle);
