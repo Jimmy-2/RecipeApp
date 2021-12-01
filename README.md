@@ -240,5 +240,7 @@ Recipe Screen:
 <img src='https://raw.githubusercontent.com/Jimmy-2/RecipeApp/master/gifs/favorites3.gif' title='Favorites Screen 11/23/2021 Unit 12' width='' alt='Favorites Screen 11/23/2021 Unit 12' />
 
 ##### Unit 13: 11/30/2021
+
 4th tab: Favorites Screen:
+
 <img src='https://github.com/Jimmy-2/RecipeApp/blob/master/gifs/FavoritesFinal.gif?raw=true' title='Favorites Screen 11/30/2021 Unit 13' width='' alt='Favorites Screen 11/30/2021 Unit 13' />
