@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.bumptech.glide.Glide;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.recipeapp.R;
@@ -51,6 +53,11 @@ public class RecipeScreenFragment extends Fragment {
     String instructions;
 
     TextView tvTitle;
+    TextView tvReadyMin;
+    TextView tvServings;
+    TextView tvInstructions;
+    TextView tvSummary;
+    ImageView ivFood;
 
     public RecipeScreenFragment() {
 
@@ -83,7 +90,11 @@ public class RecipeScreenFragment extends Fragment {
         tvTitle = view.findViewById(R.id.tvTitle);
         getRecipeData(recipe_id);
 
-
+        ivFood = view.findViewById(R.id.ivFood);
+        tvReadyMin = view.findViewById(R.id.tvReadyMin);
+        tvServings = view.findViewById(R.id.tvServings);
+        tvSummary = view.findViewById(R.id.tvSummary);
+        tvInstructions = view.findViewById(R.id.tvInstructions);
 
 
 
@@ -123,7 +134,11 @@ public class RecipeScreenFragment extends Fragment {
 
                     tvTitle.setText(recipeTitle);
 
-
+                    tvReadyMin.setText("Ready in " + readyTime + "minutes.");
+                    tvServings.setText("Makes " + servings + " servings");
+                    tvInstructions.setText(instructions);
+                    tvSummary.setText(summary);
+                    Glide.with(getContext()).load(imageURL).into(ivFood);
                     System.out.println("HELLO"+id);
                     System.out.println("HELLO"+recipeTitle);
                     System.out.println("HELLO"+imageURL);
